@@ -1,54 +1,59 @@
-Instructions
-------------
+Instructions\
+------------\
 
-I included a seed.js file to speed up the testing process instead of posting each transaction individually.
-Additional transactions can be added by posting to localhost:8080/api/transactions.
+I included a seed.js file to speed up the testing process instead of posting each transaction individually.\
+Additional transactions can be added by posting to localhost:8080/api/transactions.\
 
-1: Install PostgreSQL and Postman or any other API testing tool.
+0. Clone the repository.\
+'git clone git@github.com:avante-garde/transactions.git' which uses SSH\
+or\
+'git clone https://github.com/avante-garde/transactions.git' which uses HTTPS\
 
-2: Create the Postgres Database:
-'createdb transactions'
+1. Install PostgreSQL and Postman or any other API testing tool.\
 
-3: Install node packages using:
-'npm install'
+2. Create the Postgres Database:\
+'createdb transactions'\
 
-4: Start seeding the database using:
-'npm run start seed'
+3. Install node packages using:\
+'npm install'\
 
-5: Start the server using:
-'npm run start' or you can use
-'npm run start-server' which restarts server automatically when new changes are saved
+4. Start seeding the database using:\
+'npm run start seed'\
 
-6: You can test out the GET localhost:8080/api/transactions route by making a Postman request.
-It should return an JSON object:
-{
-    "DANNON": 1100,
-    "UNILEVER": 200,
-    "MILLER COORS": 10000
-}
+5. Start the server using:\
+'npm run start' or you can use\
+'npm run start-server' which restarts server automatically when new changes are saved\
 
-7. To test out the POST localhost:8080/api/transactions/spend route, click on the Body tab and select raw format.
-Make sure that JSON is selected as an option on the dropdown to the right of GraphQL.
-Include the JSON object { "points": "5000" } as part a request body.
-It should return an array of objects containing payer and points spent:
-[
+6. You can test out the GET localhost:8080/api/transactions route by making a Postman request.\
+It should return an JSON object:\
+{\
+    "DANNON": 1100,\
+    "UNILEVER": 200,\
+    "MILLER COORS": 10000\
+}\
+
+7. To test out the POST localhost:8080/api/transactions/spend route, click on the Body tab and select raw format.\
+Make sure that JSON is selected as an option on the dropdown to the right of GraphQL.\
+Include the JSON object { "points": "5000" } as part a request body.\
+It should return an array of objects containing payer and points spent:\
+[\
+    {\
+        "payer": "DANNON",\
+        "points": -100\
+    },\
     {
-        "payer": "DANNON",
-        "points": -100
-    },
-    {
-        "payer": "UNILEVER",
-        "points": -200
-    },
-    {
-        "payer": "MILLER COORS",
-        "points": -4700
-    }
-]
+        "payer": "UNILEVER",\
+        "points": -200\
+    },\
+    {\
+        "payer": "MILLER COORS",\
+        "points": -4700\
+    }\
+]\
 
-8. A subsequent call to GET localhost:8080/api/transactions should return a JSON object:
-{
-    "DANNON": 1000,
-    "UNILEVER": 0,
-    "MILLER COORS": 5300
-}
+8. A subsequent call to GET localhost:8080/api/transactions should return a JSON object:\
+{\
+    "DANNON": 1000,\
+    "UNILEVER": 0,\
+    "MILLER COORS": 5300\
+}\
