@@ -16,7 +16,7 @@ ______________
 * 'npm install'
 
 ### 4. Start seeding the database.
-* 'npm run start seed'
+* 'npm run seed'
 
 ### 5. Start the server.
 * 'npm run start' or
