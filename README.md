@@ -4,24 +4,22 @@ ______________
 ## I included a seed.js file to speed up the testing process instead of posting each transaction individually. Additional transactions can be added by posting to localhost:8080/api/transactions.
 
 ### 0. Clone the repository.
-* SSH: 'git clone git@github.com:avante-garde/transactions.git'
-or\
+* SSH: 'git clone git@github.com:avante-garde/transactions.git' or
 * HTTPS: 'git clone https://github.com/avante-garde/transactions.git'
 
 ### 1. Install PostgreSQL and Postman or any other API testing tool.
 
-### 2. Create the Postgres Database:
+### 2. Create the Postgres Database.
 * 'createdb transactions'
 
-### 3. Install node packages using:
+### 3. Install node packages.
 * 'npm install'
 
-### 4. Start seeding the database using:
+### 4. Start seeding the database.
 * 'npm run start seed'
 
-### 5. Start the server using:
-* 'npm run start'
-or\
+### 5. Start the server.
+* 'npm run start' or
 * 'npm run start-server' which restarts server automatically when new changes are saved
 
 ### 6. You can test out the GET localhost:8080/api/transactions route by making a Postman request. It should return an JSON object:
@@ -33,7 +31,7 @@ or\
 }
 ```
 
-### 7. To test out the POST localhost:8080/api/transactions/spend route. Click on the Body tab and select raw format. Make sure that JSON is selected as an option on the dropdown to the right of GraphQL. Include the JSON object { "points": "5000" } as part a request body. It should return an array of objects containing payer and points spent:
+### 7. To test out the POST localhost:8080/api/transactions/spend route. Click on the Body tab and select raw format. Make sure that JSON is selected as an option on the dropdown to the right of GraphQL. Include the JSON object { "points": "5000" } as part of the request body. It should return an array of objects containing payer and points spent:
 ```
 [
     {
