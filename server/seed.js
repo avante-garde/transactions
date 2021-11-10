@@ -11,6 +11,7 @@ const transactionsList = [
 ];
 
 const seed = async () => {
+  console.log('Seeding database...')
   try {
     await db.sync({ force: true });
 
@@ -24,16 +25,15 @@ const seed = async () => {
 
   } catch (error) {
     console.error(error);
+  } finally {
+    console.log('Closing database...');
+    await db.close();
+    console.log('Database closed.')
   }
 };
 
 module.exports = seed;
 
 if (require.main === module) {
-  seed().then(() => {
-    console.log('Seeding success!');
-  }).catch(error => {
-    console.error(error);
-    db.close();
-  });
+  seed();
 }
