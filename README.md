@@ -1,7 +1,8 @@
 # Instructions
-______________
 #### Created using: Express.js, Node.js, PostgreSQL, Sequelize, JavaScript
 #### I included a seed.js file to speed up the testing process instead of posting each transaction individually. Additional transactions can be added by posting to localhost:8080/api/transactions.
+
+________________________________________________________________________
 
 ### 0. Clone the repository.
 * SSH: 'git clone git@github.com:avante-garde/transactions.git' or
